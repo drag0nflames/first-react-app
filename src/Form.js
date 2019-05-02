@@ -10,14 +10,16 @@ class Form extends Component {
     };
 
     this.state = this.initialState;
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = event => {
+  handleChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-  };
+  }
 
   submitForm = () => {
     this.props.handleSubmit(this.state);
